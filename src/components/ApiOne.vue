@@ -3,13 +3,12 @@
   import { ref } from 'vue';
 
   let datos: any = ref();
-  let number: any = ref();
 
-  axios.get('https://api.chucknorris.io/jokes/random')
+  axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
     .then((response) => {
-      response.data
-      console.log(response.data);
-      datos = response.data
+      response.data.results
+      console.log(response.data.results);
+      datos = response.data.results;
     })
 
 </script> 
@@ -20,10 +19,9 @@
         <h1>Datos de NASA</h1>
       </div>
       <div class="col-auto text-center">
-        <li v-for="element in datos">
-          {{ element.id }}
-          <img src={{ element.icon_url }} alt=""/>
-        </li>
+        <tr v-for="element in datos">
+          <p>{{ element.name }}</p>
+        </tr>
       </div>
     </div>
   </div>
