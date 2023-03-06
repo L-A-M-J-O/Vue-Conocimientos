@@ -2,10 +2,11 @@
 
   import TheWelcome from '../components/TheWelcome.vue'
   import ApiOne from '@/components/ApiOne.vue';
-
+  import ac from '@/components/ac.vue';
 </script>
 <template>
   <main>
-    <ApiOne/>
+    <!-- <ApiOne/> -->
+    <ac/>
   </main>
 </template>
